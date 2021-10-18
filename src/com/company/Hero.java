@@ -1,28 +1,17 @@
 package com.company;
 
-public class Hero {
-    private int health;
-    private int damage;
+public class Hero extends GameEntity{
     private String superAbility;
 
     public Hero(int health, int damage, String superAbility) {
-        this.health = health;
-        this.damage = damage;
+        super(health, damage);
         this.superAbility = superAbility;
     }
 
     public Hero(int health, int damage) {
-        this.health = health;
-        this.damage = damage;
+        super(health, damage);
     }
 
-    public int getHealth() {
-        return health;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
 
     public String getSuperAbility() {
         return superAbility;
@@ -31,9 +20,9 @@ public class Hero {
     @Override
     public String toString() {
         return "Hero{" +
-                "health=" + health +
-                ", damage=" + damage +
-                ", superAbility='" + superAbility + '\'' +
+                "superAbility='" + superAbility + '\'' +
+                "health = " + super.getHealth() +
+                "damage = " + super.getDamage() +
                 '}';
     }
 }

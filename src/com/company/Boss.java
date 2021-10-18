@@ -1,30 +1,12 @@
 package com.company;
 
-public class Boss {
-    private int health;
-    private int damage;
+public class Boss extends GameEntity{
+
     private String typeOfProtection;
 
     public Boss(int health, int damage, String typeOfProtection) {
-        this.health = health;
-        this.damage = damage;
+        super(health, damage);
         this.typeOfProtection = typeOfProtection;
-    }
-
-    public int getHealth() {
-        return health;
-    }
-
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getDamage() {
-        return damage;
-    }
-
-    public void setDamage(int damage) {
-        this.damage = damage;
     }
 
     public String getTypeOfProtection() {
@@ -38,9 +20,9 @@ public class Boss {
     @Override
     public String toString() {
         return "Boss{" +
-                "health=" + health +
-                ", damage=" + damage +
-                ", typeOfProtection='" + typeOfProtection + '\'' +
+                "typeOfProtection = '" + typeOfProtection + '\'' +
+                "health = " + super.getHealth() +
+                "damage = " + super.getDamage() +
                 '}';
     }
 }
